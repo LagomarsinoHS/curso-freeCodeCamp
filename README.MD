@@ -2,7 +2,6 @@
 
 
 - [NestJs-beginner-Course] - Create an Api Rest with nestJs!
-- [Learn TypeScript - Full Course for Beginners] - TypeScript tutorial!
 
 
 # Importante
@@ -24,4 +23,3 @@ Quede en 1:33
 
 
 [NestJs-beginner-Course]: <https://www.youtube.com/watch?v=GHTA143_b-s>
-[Learn TypeScript - Full Course for Beginners]: <https://www.youtube.com/watch?v=gp5H0Vw39yw>
