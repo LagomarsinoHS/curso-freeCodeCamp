@@ -45,8 +45,10 @@
     `npm run db:dev:restart`
 
 2. Migrar las tablas ya hechas con el script:
+
     `npm run prisma:dev:deploy`
 
 3. Levantar el servicio
+
     `npm run start:dev`
 
