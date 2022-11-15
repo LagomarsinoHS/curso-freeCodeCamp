@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDTO } from './dto';
 import * as argon from 'argon2';
@@ -29,7 +29,10 @@ export class AuthService {
         },
       });
 
-      return user;
+      return {
+        msg: 'User created',
+        user,
+      };
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
@@ -40,7 +43,27 @@ export class AuthService {
       throw error;
     }
   }
-  login() {
-    return { msg: `I am Signing In` };
+
+  async login({ email, password }: AuthDTO) {
+    // Find user by Email
+    const user = await this.prismaService.user.findUnique({
+      where: { email: email },
+    });
+
+    // If user not exist throw exception
+    if (!user) throw new ForbiddenException('User not found');
+
+    // Compare Password
+    const pwMatches = await argon.verify(user.hash, password);
+
+    // If password incorrect throw exception
+    if (!pwMatches) throw new ForbiddenException('Password Incorrect');
+    // Send back the user
+
+    delete user.hash;
+    return {
+      msg: `Logged in`,
+      user,
+    };
   }
 }

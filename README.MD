@@ -12,7 +12,7 @@
 
 
 
-Quede en 1:13.12
+Quede en 1:33
 
 
 
