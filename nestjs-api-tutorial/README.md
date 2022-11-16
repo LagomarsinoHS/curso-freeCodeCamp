@@ -24,7 +24,11 @@
 |---	|---	|---	|
 |  1 	| class-transform  	| Para usar validationPipe  	|
 |  2 	| Argon2  	| Para Hashear password, mejor que bcrypt  	|
-|  2 	| @nest/config  	| Permite utilizar .env Revisar en app.module el configModule, el isGlobal permite usarlo en todos los modulos  	|
+|  3 	| @nest/config  	| Permite utilizar .env Revisar en app.module el configModule, el isGlobal permite usarlo en todos los modulos  	|
+|  4 	| @nestjs/passport and  passport  	| To handle authentication
+|  5 	| @nestjs/jwt passport-jwt  	| Para usar jwt
+
+
 
 
 # Prisma
@@ -52,3 +56,8 @@
 
     `npm run start:dev`
 
+# Auth/ strategy
+
+    En esta carpeta se creo un archivo `jwt.strategy.ts`. Esto es para indicarle a nuestro servidor que cada petición vendrá con un token Bearer, en el caso de que no corresponda o este vencido no permitirá entrar.
+
+    Además de la definición de este archivo se necesita agregar como proveedor en `auth.module.ts`
