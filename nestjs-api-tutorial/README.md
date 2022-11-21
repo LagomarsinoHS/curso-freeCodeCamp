@@ -27,6 +27,8 @@
 |  3 	| @nest/config  	| Permite utilizar .env Revisar en app.module el configModule, el isGlobal permite usarlo en todos los modulos  	|
 |  4 	| @nestjs/passport and  passport  	| To handle authentication
 |  5 	| @nestjs/jwt passport-jwt  	| Para usar jwt
+|  6 	| @pactumJs  	| Para hacer testing en todos los niveles
+|  7 	| dotenv-cli  	| Para utilizar comandos en los scripts e indicar que .env debe usar
 
 
 

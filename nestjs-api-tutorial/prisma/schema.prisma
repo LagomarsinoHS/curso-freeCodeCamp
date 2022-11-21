@@ -38,7 +38,7 @@ model Bookmark {
   userId Int
 
   // Genero la relacion con la tabla User
-  user User @relation(fields: [userId],references: [id ])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("bookmarks")
 }

@@ -14,4 +14,13 @@ export class PrismaService extends PrismaClient {
       },
     });
   }
+
+  // Para eliminar todo lo de la bd, uso transaccion para que lo haga en el orden que yo quiero, en caso de
+  // que haya problemas con las dependencias de las tablas
+  cleanDb() {
+    return this.$transaction([
+      this.bookmark.deleteMany(),
+      this.user.deleteMany(),
+    ]);
+  }
 }
