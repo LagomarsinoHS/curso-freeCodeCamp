@@ -63,3 +63,15 @@
     En esta carpeta se creo un archivo `jwt.strategy.ts`. Esto es para indicarle a nuestro servidor que cada petición vendrá con un token Bearer, en el caso de que no corresponda o este vencido no permitirá entrar.
 
     Además de la definición de este archivo se necesita agregar como proveedor en `auth.module.ts`
+
+
+# Pactum
+
+    Finalmente se hicieron todas las pruebas de lo que viene siendo el CRUD.
+    En el archivo app.es2-spec.ts podemos encontrar todo estó, el modo de uso de pactum y las pruebas
+
+
+* Para Correr la base de datos de test (prisma studio)
+    
+    * npx dotenv -e -env-test prisma studio. Esto abrira una pagina con los valores de la BD
+    * npm run test:e2e Este script bajara el docker compose, lo subirá, limpiará la BD y estara en modo watch para ver las pruebas
