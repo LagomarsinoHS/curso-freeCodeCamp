@@ -12,6 +12,8 @@
 * Esta imagen tiene predefinida una base de datos, con datos de prueba y todo listo y montado. En el `.env` esta la url para conectarse a la BD
 `DATABASE_URL="postgresql://<USER>:<Password>@localhost:<Port>/<DBName>?schema=public"`
 
+* Esta información se consigue desde `docker-compose.yml`
+
 * Para levantar esto el comando es `docker compose up <nombreDelServicio>`, en este caso **dev-db** o usar el script del package.json `docker`. 
 
 * Si es que vamos a estar trabajando con la DB, hay que levantarlo o no funcionará.
